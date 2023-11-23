@@ -1,0 +1,31 @@
+{
+  "name": "my-project",
+  "private": false,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview": "vite preview",
+    "build": "vite build --emptyOutDir",
+    "webp": "webpify --src public/img/ --dest public/img/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.30",
+    "postcss-cli": "^10.1.0",
+    "purgecss": "^5.0.0",
+    "sass": "^1.66.1",
+    "vite": "^4.4.9",
+    "vite-plugin-purgecss": "^0.2.12"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.1",
+    "swiper": "^10.3.1"
+  }
+}

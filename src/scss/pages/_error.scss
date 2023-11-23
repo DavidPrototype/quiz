@@ -1,0 +1,63 @@
+.main-error{
+
+    padding: 2.5rem 0 0 0;
+
+    .error{
+        picture{
+            img{
+                width: 100%;
+            }
+        }
+
+        h1{
+            font-family: var(--font-primaria-bold);            
+            @include text-lg-32;
+            color:var(--color-azul300);
+            margin: 2.5rem 0;          
+        }
+
+        p{
+           font-family: var(--font-secundaria-regular);           
+           @include text-sm-16;
+           margin: 2.5rem 0;
+           span{
+            color:var(--color-azul300);
+           }
+        }
+        p.texto-404{
+            font-family: var(--font-primaria-bold);  
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+
+
+    .main-error{
+
+        padding: 4rem 0 0 0;
+    
+        .error{
+            picture{
+                img{
+                    width: 100%;
+                }
+            }
+    
+            h1{
+                        
+                @include text-lg-36;
+                
+            }
+    
+            p{
+                      
+               @include text-md-20;
+               
+            }
+        }
+    }
+}

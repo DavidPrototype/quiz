@@ -1,0 +1,87 @@
+.modal {
+    .btn-close {
+        width: 40px;
+        height: 40px;
+        background: url(../icons/modal-icon-close.svg) no-repeat center / 30px
+            var(--color-azul300);
+        border-radius: 50%;
+        appearance: none;
+        border: 0;
+        outline: none;
+        justify-self: flex-end;
+    }
+
+    &-dialog {
+        pointer-events: initial;
+    }
+
+    &-body {
+        background: var(--color-blanco);
+        padding: 12px 24px 32px 24px;
+        border-radius: 24px;
+        display: grid;
+        row-gap: 16px;
+        margin: 0 16px;
+
+        h1 {
+            @include text-md-24;
+            color: var(--color-azul300);
+        }
+        p {
+            @include text-sm-16;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        #btn-salida {
+            width: max-content;
+        }
+
+        button {
+            margin-top: 16px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .modal {
+        &-dialog {
+            width: min(50%, 532px);
+        }
+
+        &-body {
+            padding: 24px;
+
+            .btn-close {
+                margin-top: 0;
+            }
+
+            h1 {
+                @include text-md-24;
+            }
+            p {
+                @include text-sm-16;
+            }
+
+            .link-btn {
+                justify-self: flex-end;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .modal {
+        &-body {
+            margin: auto;
+
+            h1 {
+                @include text-med-28;
+            }
+            p {
+                @include text-md-20;
+            }
+        }
+    }
+}

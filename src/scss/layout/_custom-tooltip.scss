@@ -1,0 +1,19 @@
+ .tooltip.custom-tooltip{
+    --bs-tooltip-border-radius: 16px; 
+    --bs-tooltip-font-size: 14px;
+    --bs-tooltip-bg: var(--color-blanco);
+    --bs-tooltip-color: var(--bs-white);
+    --bs-tooltip-padding-y:  16px;            
+    --bs-tooltip-padding-x: 16px;
+      
+     
+      
+}
+
+.tooltip-inner{
+    // border: 1px solid red;
+    font-family: var(--font-secundaria-regular);
+    text-align: left;
+    color: var(--color-pencil);
+    box-shadow: var(--shadow-flotante);
+}

@@ -1,0 +1,74 @@
+.promociones-grid {
+    overflow-y: initial;
+    margin: 2.625rem auto;
+
+    .swiper-wrapper {
+        align-items: stretch;
+    }
+    .swiper-slide {
+        width: 288px;
+        /* display: flex;
+
+        custom-card {
+            display: flex;
+            align-items: stretch;
+
+            a {
+                display: flex;
+                align-items: stretch;
+            }
+        } */
+    }
+
+    .swiper-pagination {
+        position: relative;
+    }
+}
+// @media (min-width: 768px) {
+//     .promociones-grid {
+       
+
+        
+        
+//     }
+// }
+
+@media (min-width: 1280px) {
+    .promociones-grid {
+        margin: auto;
+
+        .swiper-wrapper {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            align-items:center;
+            column-gap: 24px;
+            row-gap: 52px;
+
+            .swiper-slide {
+                width: auto;
+                flex: 0 1 432px;
+                margin: 0;
+
+                &:first-child {
+                    margin-top: 170px;
+                }
+                &:nth-child(2) {
+                    margin-bottom: 170px;
+                }
+
+                &:is(:nth-child(4n)) {
+                    margin-top: -102px;
+                   
+                }
+
+                &:last-child:not(&:nth-child(2), &:nth-child(1)) {
+                    margin-top: -102px;
+                }
+            }
+        }
+        .swiper-pagination {
+            display: none;
+        }
+    }
+}

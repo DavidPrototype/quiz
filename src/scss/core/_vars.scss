@@ -1,0 +1,61 @@
+:root {
+    --color-azul100: #f1f4fa;
+    --color-azul150: #d9e3f2;
+    --color-azul300: #006fb9;
+    --color-azul400: #145b97;
+    --color-azul-5: #a1b8de;
+    --color-azul-claro: #d3eaff;
+    --color-pencil: #1b1a16;
+    --color-blanco: #ffffff;
+    --color-amarillo300: #ffdd35;
+    --color-gris500: #595955;
+    --color-amarillo: #ffdd35;
+    --color-amarillo-2: #f2c94c;
+    --neutral-gris-300: #9B9A98;
+    --neutral-gris-400:#777673;
+    --state-error-400:#BA4B44;
+    --state-info-100: #e4f7ff;
+    --primary-extended-azul-500: #194B7B;
+    --color-blanco-2: #fafbfc;
+    --state-error-400: #BA4B44;
+    --state-informacion-400: #0076A9;
+    --state-aprobacion-400: #2E8241;
+    $input-focus-border-color: var(--state-informacion-400) !important;
+    $input-border-width:2px;
+
+
+    --color-gradienteaur: linear-gradient(
+        107deg,
+        #0d0b79 5.77%,
+        #046ac0 33.9%,
+        #1dacba 62.04%,
+        #accc05 95.67%
+    );
+
+    --color-shadow-default: 0px 6px 16px 0px rgba(25, 75, 123, 0.08);
+    --shadow-flotante: 0px 4px 48px 0px rgba(95, 171, 221, 0.16);
+
+    --font-primaria-regular: "Circular Std";
+    --font-primaria-bold: "Circular Bold";
+    --font-secundaria-regular: "Helvetica";
+    --font-secundaria-bold: "Helvetica Bold";
+
+    --text-decoration-underline: underline;
+   
+
+    --spacing01: 0.25rem;
+    --spacing02: 0.5rem;
+    --spacing03: 1rem;
+    --spacing04: 1.5rem;
+    --spacing05: 2rem;
+    --spacing06: 2.5rem;
+    --spacing07: 3rem;
+    --spacing08: 4rem;
+
+    --spacing10: 6rem;
+
+    --radius-2xl: 5rem;
+    --radius-xl: 2.5rem;
+    --radius-lg: 1.5rem;
+    --radius-sm: 0.5rem;
+}

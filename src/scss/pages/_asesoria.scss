@@ -1,0 +1,296 @@
+// .header {
+//     .nav {
+//         &--menu {
+//             display: none;
+//         }
+//     }
+// }
+
+.main-asesoria{
+  padding-top: 2rem;
+  background: var(--color-azul100);
+
+  
+  .custom-container{
+    padding:0;
+    .envio{
+        padding: 0 36px;
+    }
+  }
+    .link-back {
+        margin-bottom: 24px;
+        a {
+            @include text-sm-16;
+            color: var(--color-azul300);
+            font-family: var(--font-secundaria-bold);
+            display: inline-flex;
+            column-gap: 8px;
+            text-decoration: none;
+        }
+    }
+
+    .headline{
+        h2{
+            @include text-lg-32;  
+          }
+          .title-underline{                    
+              margin-bottom: 24px;
+          }
+          p{
+              @include text-md-20;
+              margin-bottom: 24px;
+          }
+    }
+
+    .formulario{
+        label {
+            font-family: var(--font-secundaria-regular);
+            color: var(--neutral-gris-400);
+            @include text-sm-16;
+        }
+        .captura-dato {
+            margin-bottom: 24px;
+        }
+        input {
+            border-radius: 8px;
+            border: 1px solid var(--neutral-gris-300);
+            margin-top: 4px;
+            padding: 12px 16px;
+            width: 100%;
+        }
+        .error {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 4px;
+
+            p {
+                font-family: var(--font-secundaria-regular);
+                margin: 0;
+                @include text-sm-14;
+                color: var(--state-error-400);
+            }
+        }
+        .aviso-privacidad{
+            p{
+                font-family: var(--font-secundaria-regular);
+                @include text-sm-16;
+                margin-bottom: 24px;
+                a{
+                    font-family: var(--font-secundaria-bold);
+                    color:var(--color-azul300);
+                    text-decoration: underline;
+                    
+
+                }
+            }
+        }       
+    }
+
+    
+    .informacion{
+        margin-top:120px;
+        position: relative;
+       
+        &-imagen{
+            display: block;
+            border-radius: 40px 40px 0px 0px;
+            overflow: hidden;
+            position: relative;
+           
+          img{
+            height: 100%;
+            object-fit: cover;
+          }
+                   
+            
+
+        }
+
+        &-card{
+            border-radius: 24px;
+            padding: 24px;
+            margin: 0 24px;                    
+            background: var(--color-blanco);
+            color: var(--color-azul300);
+            box-shadow: var(--shadow-flotante);
+            position: absolute;
+            bottom: 340px;
+           
+            p{
+              font-family: var(--font-primaria-bold);  
+              @include text-med-28;
+            }
+        }
+    }
+
+}
+
+.footer-asesoria{
+    padding: 24px 0;
+    background: var(--color-azul300);
+    color: var(--color-blanco);
+    font-family: var(--font-secundaria-regular);
+   
+        a{  
+            display: inline-block;
+            text-decoration: underline;
+        }
+        .year{
+            @include text-sm-16;
+        }
+        .custom-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+}
+
+@include media-breakpoint-up(lg) {
+    .main-asesoria{
+        padding: 2.5rem 0 4rem 0;
+        overflow: hidden;
+        min-height: 890px;
+        .custom-container{
+            padding: 0 calc( var(--bs-gutter-x) * 0.5  );
+            .row  {
+                align-items: end;
+                position: relative;
+            }
+          
+            .envio{
+                padding:0;
+            }
+            .alerta-contenido{
+                position: absolute;
+                right: -64px;
+            }
+        }
+
+        
+
+        .informacion{
+            margin-top:0;
+            position: relative;
+           
+            &-imagen{
+               
+                border-radius: 80px 0px 0px 80px;
+               
+            }
+    
+            &-card{
+                
+                // padding: 40px 64px;                             
+                position: absolute;
+                bottom: 34px;
+                left: -70px;
+               
+                
+            }
+        }
+      
+       
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .header {
+        .nav {
+            &--menu {
+                display: block;
+            }
+        }
+    }
+    .main-asesoria{
+        overflow: hidden;
+        // padding: 2.5rem 0 4rem 0;
+        padding:0;
+        .custom-container{
+            padding: 0 calc( var(--bs-gutter-x) * 0.5 );
+            .row  {               
+              
+                gap: 64px;
+            }
+          
+            .envio{
+                padding: 2.5rem 0;
+            }
+            .alerta-contenido{
+                padding: 0;
+                position: absolute;
+                right: -96px;
+                top:0;
+                bottom: 0;
+            }
+        }
+        .headline{
+            h2{
+                @include text-lg-48;  
+              }
+             
+             
+        }
+        .formulario{
+            width: 70%;
+           
+          
+          
+           
+            .aviso-privacidad{
+                p{
+                    @include text-sm-16;
+                    margin-bottom: 24px;
+                    a{
+                        font-family: var(--font-secundaria-bold);
+                        color:var(--color-azul300);
+                        text-decoration: underline;
+                        
+    
+                    }
+                }
+            } 
+        }
+        .informacion{
+            margin-top:0;
+            position: relative;
+            height: 100%;
+           
+            &-imagen{
+               
+                border-radius: 80px 0px 0px 80px;
+                height: 100%;
+               
+            }
+    
+            &-card{
+                padding: 40px 64px;  
+                width: 80%;
+                bottom: 34px;
+                left: -70px;
+                p{
+                     
+                    @include text-lg-36;
+                  }
+                
+            }
+        }
+      
+       
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .main-asesoria{
+        overflow: hidden;
+        // padding: 2.5rem 0 4rem 0;
+      
+        .custom-container{
+            padding: 0 auto;
+           
+        }
+       
+      
+       
+    }
+}

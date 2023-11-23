@@ -1,0 +1,24 @@
+.badge {
+    display: flex;
+    padding: 4px 8px;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    gap: 4px;
+    border-radius: 16px;
+    background: var(--color-amarillo300);
+
+    h6 {
+        color: var(--color-azul400);
+        font-family: var(--font-family-primary-bold);
+        margin: 0;
+        font-size: 0.875rem;
+        line-height: 0.875rem;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .badge {
+        padding: 8px 16px;
+    }
+}

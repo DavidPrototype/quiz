@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function validarPassword() {
+                var password;
+                while (password != "[y1.UaPp09N0") {
+                    password = prompt(
+                        "Para ver la página introduzca su contraseña"
+                    );
+                }
+                localStorage.setItem('autenticadoInver','si')
+                window.location.href ='index.html';
+            }
+
+            validarPassword();
+        });
+    </script>
+</body>
+</html>

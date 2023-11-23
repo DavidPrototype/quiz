@@ -1,0 +1,49 @@
+.faqs {
+    padding: var(--spacing08) 0;
+    background: var(--color-azul100);
+
+    .row {
+        row-gap: var(--spacing04);
+    }
+
+    &--header {
+        display: grid;
+        row-gap: var(--spacing04);
+
+        p {
+            @include text-md-20;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .faqs {
+        .title-underline {
+            br {
+                display: none;
+            }
+        }
+
+        .row {
+            row-gap: 64px;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .faqs {
+        padding: 96px 0;
+
+        .title-underline {
+            @include text-lg-48;
+        }
+
+        .row {
+            row-gap: 40px;
+        }
+
+        &--header {
+            place-content: flex-start;
+        }
+    }
+}

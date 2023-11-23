@@ -1,0 +1,58 @@
+.accordion-item {
+    border-bottom: 3px solid var(--color-azul150);
+
+    h2 {
+        cursor: pointer;
+        @include text-md-20;
+        padding: 1.125rem 0;
+        column-gap: var(--spacing03);
+        font-family: var(--font-primaria-bold);
+    }
+
+    p {
+        @include text-sm-16;
+        padding-bottom: 1.25rem;
+        font-family: var(--font-secundaria-regular);
+
+        br {
+            display: block;
+            margin-bottom: var(--spacing03);
+            content: "";
+        }
+    }
+
+    ul {
+        display: grid;
+        row-gap: var(--spacing02);
+        font-family: var(--font-secundaria-regular);
+    }
+    .accordion-button {
+        &::after {
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23006fb9'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+        }
+    }
+
+    .accordion-collapse {
+        padding-right: 2.875rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .accordion-item {
+        h2 {
+            @include text-md-20;
+        }
+
+        p {
+            @include text-sm-14;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .accordion-item {
+        p {
+            @include text-sm-16;
+        }
+    }
+}

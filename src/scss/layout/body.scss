@@ -1,0 +1,12 @@
+body {
+    @import "../pages/globals";
+    @import "_header";
+    @import "_footer";     
+    @import "_beneficios"; 
+    @import "_conceptos";
+    @import "_preguntas-frecuentes";       
+    @import "../pages/_home";   
+    @import "../pages/_error";
+
+   
+}

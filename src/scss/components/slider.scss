@@ -1,0 +1,29 @@
+.swiper {
+    .swiper-wrapper {
+        margin-bottom: var(--spacing04);
+    }
+
+    .swiper-slide {
+        &:has(.card) {
+            padding: var(--spacing03);
+        }
+    }
+
+    .swiper-pagination {
+        position: relative;
+    }
+
+    .swiper-pagination-bullet {
+        background: var(--color-azul300);
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .swiper {
+        .swiper-slide {
+            &:has(.card) {
+                padding: var(--spacing02);
+            }
+        }
+    }
+}
