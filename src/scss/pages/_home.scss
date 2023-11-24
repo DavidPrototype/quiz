@@ -81,6 +81,7 @@
                         box-shadow: var(--color-shadow-default);
                         margin-bottom:1rem ;
                         &-indice{
+                            flex: 0 0 auto;
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -93,6 +94,7 @@
                             @include text-sm-14;
                         }
                         &-contenido{
+                            flex-basis: 90%;
                             font-family: var( --font-secundaria-regular);
                             @include text-sm-16;
 
@@ -184,6 +186,10 @@
                         .respuesta{
                             padding: 1rem;
                             margin-bottom: 24px;
+
+                            &-indice{
+                                flex-basis: auto;
+                            }
                         }
                     }
                 }
