@@ -123,7 +123,79 @@
         }
     }
 
-    
+    .quiz--resultados{
+        border: 1px solid red;
+      
+        .resultado-contenedor{
+            border-radius: 16px;
+            padding: 24px 12px;
+            background: var(--state-aprobacion-100);
+
+            .imagen{
+                display: block;
+                text-align: center;
+               
+                img{
+                    width: 264px;           
+                }
+            }
+
+            .resultado-headline{
+                text-align: center;
+                &--title{
+                    color:var(--color-pencil);                    
+                }
+                .title-underline{
+                    place-items: center;
+                    &::after{
+                        background: var(--state-aprobacion-400);
+                    }
+                }
+
+                &--subtitle{
+                    margin-top: 1rem;
+                    font-family: var(--font-primaria-bold);
+                    @include text-sm-18;
+                }
+            }
+
+            .caracteristicas{
+                border-radius: 16px;
+                padding: 24px;
+                background: var(--color-blanco) ;
+                ul {
+                    padding: 0;
+                    display: grid;
+                    row-gap: var(--spacing03);
+            
+                    li {
+                        font-family: var(--font-secundaria-regular);
+                        @include text-sm-16;
+                        list-style: none;
+                        display: flex;
+                        align-items: center;
+                        column-gap: var(--spacing03);
+                        p{
+                            span{
+                                font-family: var(--font-secundaria-bold);
+                            }
+                        }
+                        &::before {
+                            content: "";
+                            flex: 0 0 auto;
+                            width: 24px;
+                            height: 24px;
+                            display: block;
+                            background: url(../icons/check.svg) no-repeat center / contain;
+                        }
+
+                        
+                    }
+                }
+            }
+        }
+
+    }
 }
 
 // @include media-breakpoint-up(lg) {
