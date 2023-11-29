@@ -22,6 +22,16 @@
         //     border:1px solid blue;
 
         // }
+        .swiper-quiz{
+            overflow: hidden;
+
+            .swiper-pagination{
+                position: relative;
+            }
+            .swiper-pagination-fraction{
+                bottom: 0;
+            }
+        }
         &-card{
             border: 1px solid red;
             border-radius: 1rem;
@@ -38,7 +48,8 @@
                     align-items: center;
                     margin-bottom: 1rem;
                     &-bar{
-                        flex: 0 0 90%;
+                        flex: 0 0 auto;
+                        width: 80%;
                         .progress{
                             border-radius: 8px;
                             background: var(--color-blanco);
@@ -46,6 +57,7 @@
                     }
                     &-paso{
                         flex: 0 0 auto;
+                        width: 20%;
                         font-family: var(--font-secundaria-regular);
                     }
 
@@ -72,6 +84,7 @@
                      }
 
                      .respuesta{
+                        
                         padding: 0.75rem 1rem;
                         border-radius: 1rem;
                         display: flex;
@@ -79,7 +92,8 @@
                         gap: 0.5rem;
                         background: var(--color-blanco); 
                         box-shadow: var(--color-shadow-default);
-                        margin-bottom:1rem ;
+                        margin-bottom:1rem;
+                        cursor: pointer;
                         &-indice{
                             flex: 0 0 auto;
                             display: flex;
@@ -260,14 +274,44 @@
         }
 
     }
+    .loader-contenedor{
+        padding: 64px 24px;
+        border-radius: 16px;
+        background:var(--color-azul100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        .loader{
+            flex: 0 0 auto;
+            width: auto;
+        }
+        p{
+            flex: 0 0 auto;
+            width: auto;
+           font-family: var(--font-primaria-bold);
+           @include text-sm-18; 
+        }
+    }
+    .loader {       
+
+        &.hide {
+            display: none;
+        }
+    }
 }
 
-// @include media-breakpoint-up(lg) {
-//     .main-home {
-        
+@include media-breakpoint-up(lg) {
+    .main-home {
+        .loader-contenedor{
+            .loader{
+            
+                width: 50%;
+            }
+        }
     
-//     }
-// }
+    }
+}
 
 @include media-breakpoint-up(xl) {
 
@@ -333,7 +377,8 @@
                     margin: 1rem 0 0 auto;
                     text-align: left;
                     padding-left:0;
-                    width: 50%;
+                    // width: 50%;
+                    width: 100%;
                    
                     .link-back a {               
                        
@@ -422,7 +467,14 @@
             }
         }
         
-        
+        .loader-contenedor{
+            .loader{            
+                width: 25%;
+            }
+            p{
+                @include text-md-20;
+            }
+        }
     
     }
     

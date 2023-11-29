@@ -8,6 +8,8 @@
     <title>Quiz</title>
 
    
+
+   
   
   </head>
   <body>
@@ -31,51 +33,259 @@
 
           <div class="row justify-content-xl-center">
             <div class="col-12 col-xl-10  quiz-contenedor">
-              <div class="quiz-card">
-                    <div class="instrucciones">
-                      <p class="enunciado">Responde las preguntas y descubre tips para tu perfil</p>
-                      <div class="progreso">
-                          <div class="progreso-bar">
-                            <div class="progress" role="progressbar" aria-label="Progreso del quiz" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 8px;">
-                              <div class="progress-bar" style="width: 16.6%"></div>
+              <div class="quiz-card swiper-quiz">
+                <div class="instrucciones">
+                  <p class="enunciado">Responde las preguntas y descubre tips para tu perfil</p>
+                  <div class="progreso">
+                      <div class="progreso-bar">
+                        <div class="progress" role="progressbar" aria-label="Progreso del quiz" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 8px;">
+                          <div class="progress-bar" style="width: 16.6%"></div>
+                        </div>
+                      </div>
+                      <div class="progreso-paso">
+                        <div class="swiper-pagination"></div>
+                      </div>
+                        
+                  </div>
+                </div>
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                          <div class="contenido">
+                              <picture class="imagen">
+                                  <source
+                                      srcset="img/tdd-quincena-2.webp"
+                                      type="image/webp"
+                                  />
+                                  <img
+                                      
+                                      src="img/tdd-quincena-2.png"
+                                      alt="Imagen Pregunta 1"
+                                  />
+                              </picture>
+                              <div class="pregunta">
+                                  <p class="titulo">¿Cuál de estos beneficios quisieras en tu Tarjeta de Débito BanCoppel?</p>
+                                  <div class="respuestas">
+                                    <div class="respuesta" data-puntaje="0">
+                                      <div class="respuesta-indice">a</div>
+                                      <p class="respuesta-contenido">Cero comisiones por utilizarla</p>
+                                    </div>
+                                    <div class="respuesta" data-puntaje="1">
+                                      <div class="respuesta-indice">b</div>
+                                      <p class="respuesta-contenido">Recompensas al pagar con ella</p>
+                                    </div>
+                                    <div class="respuesta" data-puntaje="2">
+                                      <div class="respuesta-indice">c</div>
+                                      <p class="respuesta-contenido">Me gustan los que tiene ahora</p>
+                                    </div>
+                                  </div>
+                                  
+                              </div>
+                          </div>
+                      </div>
+                      <div class="swiper-slide">
+                          <div class="contenido">
+                            <picture class="imagen">
+                                <source
+                                    srcset="img/tdd-pregunta-2.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    
+                                    src="img/tdd-pregunta-2.png"
+                                    alt="Imagen Pregunta 1"
+                                />
+                            </picture>
+                            <div class="pregunta">
+                                <p class="titulo">¿Qué haces con tu Tarjeta de Débito BanCoppel al recibir tu quincena?</p>
+                                <div class="respuestas">
+                                  <div class="respuesta" data-puntaje="0">
+                                    <div class="respuesta-indice">a</div>
+                                    <p class="respuesta-contenido">Retirar todo el dinero, prefiero el efectivo</p>
+                                  </div>
+                                  <div class="respuesta"  data-puntaje="1">
+                                    <div class="respuesta-indice">b</div>
+                                    <p class="respuesta-contenido">Hacer mis compras en línea</p>
+                                  </div>
+                                  <div class="respuesta" data-puntaje="2">
+                                    <div class="respuesta-indice">c</div>
+                                    <p class="respuesta-contenido">Retirar lo necesario y ahorrar el resto</p>
+                                  </div>
+                                </div>
+                                <div class="acciones">
+                                  <div class="link-back">
+                                    <a href="javascript:void(0);" class="prev-quiz">
+                                        <img src="icons/icon-arrow-back.svg" alt="" />
+                                        Regresar</a
+                                    >
+                                  </div>
+                                </div>
                             </div>
                           </div>
-                          <div class="progreso-paso">1/6</div>
                       </div>
-                    </div>
-                    <div class="contenido">
-                        <picture class="imagen">
-                            <source
-                                srcset="img/tdd-quincena-2.webp"
-                                type="image/webp"
-                            />
-                            <img
-                                
-                                src="img/tdd-quincena-2.png"
-                                alt="Imagen Pregunta 1"
-                            />
-                        </picture>
-                        <div class="pregunta">
-                            <p class="titulo">¿Cuál de estos beneficios quisieras en tu Tarjeta de Débito BanCoppel?</p>
-                            <div class="respuestas">
-                              <div class="respuesta">
-                                <div class="respuesta-indice">a</div>
-                                <p class="respuesta-contenido">Cero comisiones por utilizarla</p>
-                              </div>
-                              <div class="respuesta">
-                                <div class="respuesta-indice">b</div>
-                                <p class="respuesta-contenido">Recompensas al pagar con ella</p>
-                              </div>
-                              <div class="respuesta">
-                                <div class="respuesta-indice">c</div>
-                                <p class="respuesta-contenido">Me gustan los que tiene ahora</p>
-                              </div>
+                      <div class="swiper-slide">
+                          <div class="contenido">
+                            <picture class="imagen">
+                                <source
+                                    srcset="img/tdd-pregunta-3.webp"
+                                    type="image/webp"
+                                />
+                                <img
+                                    
+                                    src="img/tdd-pregunta-3.png"
+                                    alt="Imagen Pregunta 3"
+                                />
+                            </picture>
+                            <div class="pregunta">
+                                <p class="titulo">¿Qué promociones de tu Tarjeta de Débito BanCoppel te interesan más?</p>
+                                <div class="respuestas">
+                                  <div class="respuesta" data-puntaje="0">
+                                    <div class="respuesta-indice">a</div>
+                                    <p class="respuesta-contenido">Descuentos y promociones en Tiendas Coppel </p>
+                                  </div>
+                                  <div class="respuesta" data-puntaje="1">
+                                    <div class="respuesta-indice">b</div>
+                                    <p class="respuesta-contenido">Programa de recompensas al pagar en el super</p>
+                                  </div>
+                                  <div class="respuesta" data-puntaje="2">
+                                    <div class="respuesta-indice">c</div>
+                                    <p class="respuesta-contenido">Cupones de descuento en restaurantes, farmacias, etc. </p>
+                                  </div>
+                                </div>
+                                <div class="acciones">
+                                  <div class="link-back">
+                                    <a href="javascript:void(0);">
+                                        <img src="icons/icon-arrow-back.svg" alt="" />
+                                        Regresar</a
+                                    >
+                                  </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                   
+                          </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="contenido">
+                          <picture class="imagen">
+                              <source
+                                  srcset="img/tdd-pregunta-4.webp"
+                                  type="image/webp"
+                              />
+                              <img
+                                  
+                                  src="img/tdd-pregunta-4.png"
+                                  alt="Imagen Pregunta 3"
+                              />
+                          </picture>
+                          <div class="pregunta">
+                              <p class="titulo">¿En qué sueles gastar con tu Tarjeta de Débito BanCoppel?</p>
+                              <div class="respuestas">
+                                <div class="respuesta" data-puntaje="0">
+                                  <div class="respuesta-indice">a</div>
+                                  <p class="respuesta-contenido">Gastos de todo tipo: salidas, cine, diversión, etc.</p>
+                                </div>
+                                <div class="respuesta" data-puntaje="1">
+                                  <div class="respuesta-indice">b</div>
+                                  <p class="respuesta-contenido">Solo en gastos fijos: luz, agua, internet</p>
+                                </div>
+                                <div class="respuesta" data-puntaje="2">
+                                  <div class="respuesta-indice">c</div>
+                                  <p class="respuesta-contenido">Retiro el total y la dejo en ceros</p>
+                                </div>
+                              </div>
+                              <div class="acciones">
+                                <div class="link-back">
+                                  <a href="javascript:void(0);">
+                                      <img src="icons/icon-arrow-back.svg" alt="" />
+                                      Regresar</a
+                                  >
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="contenido">
+                          <picture class="imagen">
+                              <source
+                                  srcset="img/tdd-pregunta-5.webp"
+                                  type="image/webp"
+                              />
+                              <img
+                                  
+                                  src="img/tdd-pregunta-5.png"
+                                  alt="Imagen Pregunta 3"
+                              />
+                          </picture>
+                          <div class="pregunta">
+                              <p class="titulo">¿Qué te gusta más de tu Tarjeta de Débito BanCoppel?</p>
+                              <div class="respuestas">
+                                <div class="respuesta" data-puntaje="0">
+                                  <div class="respuesta-indice">a</div>
+                                  <p class="respuesta-contenido">Que se acepta en cualquier lugar</p>
+                                </div>
+                                <div class="respuesta" data-puntaje="1">
+                                  <div class="respuesta-indice">b</div>
+                                  <p class="respuesta-contenido">Los beneficios BanCoppel y Visa</p>
+                                </div>
+                                <div class="respuesta" data-puntaje="2">
+                                  <div class="respuesta-indice">c</div>
+                                  <p class="respuesta-contenido">Que es segura y ya no cargo efectivo</p>
+                                </div>
+                              </div>
+                              <div class="acciones">
+                                <div class="link-back">
+                                  <a href="javascript:void(0);">
+                                      <img src="icons/icon-arrow-back.svg" alt="" />
+                                      Regresar</a
+                                  >
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="contenido">
+                          <picture class="imagen">
+                              <source
+                                  srcset="img/tdd-pregunta-6.webp"
+                                  type="image/webp"
+                              />
+                              <img
+                                  
+                                  src="img/tdd-pregunta-6.png"
+                                  alt="Imagen Pregunta 3"
+                              />
+                          </picture>
+                          <div class="pregunta">
+                              <p class="titulo">¿Por qué dejaste de usar tu Tarjeta de Débito BanCoppel?</p>
+                              <div class="respuestas">
+                                <div class="respuesta" data-puntaje="0">
+                                  <div class="respuesta-indice">a</div>
+                                  <p class="respuesta-contenido">Los beneficios que ofrecen no me convienen</p>
+                                </div>
+                                <div class="respuesta" data-puntaje="1">
+                                  <div class="respuesta-indice">b</div>
+                                  <p class="respuesta-contenido">Porque recibí una mala atención al cliente</p>
+                                </div>
+                                <div class="respuesta" data-puntaje="2">
+                                  <div class="respuesta-indice">c</div>
+                                  <p class="respuesta-contenido">Dejé de recibir pagos en esta cuenta</p>
+                                </div>
+                              </div>
+                              <div class="acciones">
+                                <div class="link-back">
+                                  <a href="javascript:void(0);">
+                                      <img src="icons/icon-arrow-back.svg" alt="" />
+                                      Regresar</a
+                                  >
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                  </div> <!-- swiper-wrapper-->   
+                             
               </div>
-              <div class="quiz-card">
+              <!-- <div class="quiz-card">
                     <div class="instrucciones">
                       <p class="enunciado">Responde las preguntas y descubre tips para tu perfil</p>
                       <div class="progreso">
@@ -334,10 +544,30 @@
                       </div>
                     </div>
                    
-              </div>
+              </div> -->
             </div><!--Fin: Quiz Contenedor -->
           </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="loader-contenedor">
+                  <dotlottie-player
+                              src="../img/Loading.json"
+                              background="transparent"
+                              speed="1"
+                              direction="1"
+                              mode="normal"
+                              loop
+                              autoplay
+                              class="loader"
+                          >
+                  </dotlottie-player>
+                  <p>
+                    Calculando perfil...
+                  </p>
 
+                </div>
+              </div>
+            </div>
           <div class="row">
             <div class="col-12 quiz--resultados">
               <div class="resultado-contenedor">
@@ -415,7 +645,12 @@
     <custom-footer></custom-footer>
     
     <script type="module" src="./js/main.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
     <script type="module" src="./js/home.js"></script>
+
     
   </body>
 </html>
