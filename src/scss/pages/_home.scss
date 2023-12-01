@@ -1,3 +1,4 @@
+
 .main-home {
     
     .quiz{
@@ -33,7 +34,7 @@
             }
         }
         &-card{
-            border: 1px solid red;
+            // border: 1px solid red;
             border-radius: 1rem;
             padding: 24px 24px 40px 24px;
             background: var(--color-azul100);
@@ -143,7 +144,7 @@
         .resultado-contenedor{
             border-radius: 16px;
             padding: 24px 12px;
-            background: var(--state-aprobacion-100);
+           
             display: flex;
             flex-direction: column;
             gap: 24px;
@@ -258,20 +259,49 @@
                 }
                
             }//tips
-            .compartir-links{
+            .quiz-acciones{
+                margin-top: 1rem;
+                .compartir-sociales{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 8px; 
+                    p{
+                        font-family: var(--font-secundaria-bold);
+                        @include text-sm-14; 
+                    }                   
+                }
+
+                .contenedor-social-logos{
+                    display: flex;
+                    gap: 1rem;
+                    img:hover{
+                        cursor:pointer;
+                    }
+                }
+               .accion-repetir{
                 text-align: center;
-                
-                img{
-                    margin-right: 12px;
-                }
-                a{
-                    font-family: var(--font-secundaria-bold);
-                    @include text-sm-16;
-                    color: var(--color-azul300);
-                    text-decoration: underline;
-                }
+                margin-top: 20px;
+                   a{
+                       font-family: var(--font-secundaria-bold);
+                       @include text-sm-16;
+                       color: var(--color-azul300);
+                       text-decoration: underline;
+                   }
+               }
+            }
+            &.ahorrador{
+                background: var(--state-aprobacion-100);
+            }
+            &.espontaneo{
+                background: var(--state-info-100);
+            }
+            &.generoso{
+                background: var(--state-precaucion-100);
             }
         }
+
+        
 
     }
     .loader-contenedor{
@@ -463,9 +493,19 @@
                         margin-bottom: 40px;
                     }
                 }
+                .quiz-acciones{
+                    margin-top: 3rem;
+                    .compartir-sociales{
+                        flex-direction: row;
+                        justify-content: center;
+                        gap:30px;
+                    }
+                }
     
             }
+            
         }
+        
         
         .loader-contenedor{
             .loader{            

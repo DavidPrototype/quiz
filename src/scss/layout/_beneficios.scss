@@ -1,20 +1,22 @@
 .beneficios-template {
+    padding: 4rem 0;
     background: var(--color-azul100);
-    padding: var(--spacing08) 0;
     border-radius: var(--radius-xl);
     overflow: hidden;
 
-    .title-underline {
-        @include text-lg-32;
-        color: var(--color-azul300);
-        margin-bottom: var(--spacing04);
-    }
-
-    .subtitulo {
-
-        @include text-sm-18;
-        margin-bottom: var(--spacing04);
-        visibility: hidden;
+    .headline{
+        margin-bottom: 2.5rem;
+        text-align: center;
+        .title-underline{
+          place-items: center;   
+        }
+        &--title{
+            @include text-lg-36;
+        }
+        &--subtitle{
+            margin-top: 1.5rem;
+            @include text-md-20;
+        }
     }
 
     &--cards {
@@ -35,7 +37,7 @@
                
             }
             .swiper-slide {
-                width: 220px;
+                width: 288px;
                 // height: 168px;
             
             }
@@ -112,52 +114,52 @@
     
 }
 
-@include media-breakpoint-up(lg) {
-    .beneficios-template {
-        &--cards {
-            .card{
-                height: 116px;
-            }
-            .card-icon.columna {
-                flex-direction: row;
-            }
-            .swiper-beneficios{
+// @include media-breakpoint-up(lg) {
+//     .beneficios-template {
+//         &--cards {
+//             .card{
+//                 height: 116px;
+//             }
+//             .card-icon.columna {
+//                 flex-direction: row;
+//             }
+//             .swiper-beneficios{
 
-                .swiper-wrapper {
-                   align-items: normal;
-                   flex-wrap: wrap;
-                   gap: 24px;
+//                 .swiper-wrapper {
+//                    align-items: normal;
+//                    flex-wrap: wrap;
+//                    gap: 24px;
                    
-                   .swiper-slide{
-                    flex:0 1 47%;
-                    height: auto;
-                   }
+//                    .swiper-slide{
+//                     flex:0 1 47%;
+//                     height: auto;
+//                    }
 
-                   .swiper-slide:first-child {
-                    margin-left:0;
-                    }
-                    .swiper-slide:last-child {
-                        margin-right: 0;
-                    }
+//                    .swiper-slide:first-child {
+//                     margin-left:0;
+//                     }
+//                     .swiper-slide:last-child {
+//                         margin-right: 0;
+//                     }
                    
-                }
-                .swiper-beneficios-pagination {
-                    display: none;
-                 }
-                // .col-xl-12 .swiper-wrapper {
-                //     flex-flow: row wrap;
-                //     column-gap: var(--spacing05);
+//                 }
+//                 .swiper-beneficios-pagination {
+//                     display: none;
+//                  }
+//                 // .col-xl-12 .swiper-wrapper {
+//                 //     flex-flow: row wrap;
+//                 //     column-gap: var(--spacing05);
     
-                //     .swiper-slide {
-                //         flex: 0 1 47%;
+//                 //     .swiper-slide {
+//                 //         flex: 0 1 47%;
                        
-                //     }
-                // }
-            }
-        }
+//                 //     }
+//                 // }
+//             }
+//         }
         
-    }
-}
+//     }
+// }
 
 @include media-breakpoint-up(xl) {
     .beneficios-template {
@@ -195,7 +197,7 @@
         &--cards {
 
             .card{
-                height: 224px;
+                height: 280px;
             }
             .card-icon.columna {
                 flex-direction: column;
@@ -204,12 +206,25 @@
             .swiper-beneficios{
 
                 .swiper-wrapper {
-                  
+                    flex-wrap: wrap;
+                    align-items: normal;
+                    justify-content: center;
+                    gap: 24px;
+
                    .swiper-slide{
-                    flex:0 245px;
+                    flex:0 254px;
                     height: auto;
-                   }                  
+                   }
+                   .swiper-slide:first-child {
+                     margin-left:0;
+                    }
+                    .swiper-slide:last-child {
+                        margin-right: 0;
+                    }                  
                    
+                }
+                .swiper-beneficios-pagination {
+                    display: none;
                 }
                 // .col-xl-12 {
                 //     position: relative;

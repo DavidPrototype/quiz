@@ -10,71 +10,40 @@ let progresoBase =16.66666666666667;
 let ultimoSlide = 5;
 let calificacion=0;
 let quizRespuestas = new Array();
+let url = location.href;
+let swiperBeneficios;
 
 const progresoBar = document.querySelector('.progreso .progress-bar');
+const mediaqueryBeneficios = window.matchMedia("(max-width:1279px)");
 
-
-
-// const mediaquery = window.matchMedia("(max-width:1278px)");
-// const mediaqueryBeneficios = window.matchMedia("(max-width:767px)");
-// let swiperBeneficios, swiperPromos;
-
-// const initSliderPromos = () => {
-//     if (mediaquery.matches === true) {
-//         /* console.log("mo"); */
-//         return enableSwiperPromos();
-//     } else if (mediaquery.matches === false) {
-//         /* console.log("d"); */
-//         if (swiperPromos !== undefined ){           
-//             swiperPromos.destroy(true, true);
-//         } 
-//         return;
-//     }
-// };
-// const initSliderBeneficios = () => {
-//     if (mediaqueryBeneficios.matches === true) {
-//         /* console.log("mo"); */
-//         return enableSwiperBeneficios();
-//     } else if (mediaqueryBeneficios.matches === false) {
-//         /* console.log("d"); */
-//         if (swiperBeneficios !== undefined ){           
-//             swiperBeneficios.destroy(true, true);
-//         } 
-//         return;
-//     }
-// };
-
-// const enableSwiperPromos = () => {
+const initSliderBeneficios = () => {
+    if (mediaqueryBeneficios.matches === true) {
+        /* console.log("mo"); */
+        return enableSwiperBeneficios();
+    } else if (mediaqueryBeneficios.matches === false) {
+        /* console.log("d"); */
+        if (swiperBeneficios !== undefined ){           
+            swiperBeneficios.destroy(true, true);
+        } 
+        return;
+    }
+};
+const enableSwiperBeneficios = () => {
   
-//     swiperPromos = new Swiper(".swiper", {
-//         modules: [Pagination],
-//         // spaceBetween: 24,
-//         slidesPerView: "auto",
-//         direction: "horizontal",
-//         pagination: {
-//             el: ".swiper-pagination",
-//         },
-//     });
-// };
-// const enableSwiperBeneficios = () => {
-  
-//     swiperBeneficios = new Swiper(".swiper-beneficios", {
-//         modules: [Pagination],
-//         spaceBetween: 16,
-//         slidesPerView: "auto",
-//         direction: "horizontal",
-//         pagination: {
-//             el: ".swiper-beneficios-pagination",
-//         },
-//     });
-// };
+    swiperBeneficios = new Swiper(".swiper-beneficios", {
+        modules: [Pagination],
+        spaceBetween: 24,
+        slidesPerView: "auto",
+        direction: "horizontal",
+        pagination: {
+            el: ".swiper-beneficios-pagination",
+        },
+    });
+};
+mediaqueryBeneficios.addListener(initSliderBeneficios);
+initSliderBeneficios();
 
-// mediaquery.addListener(initSliderPromos);
-// mediaqueryBeneficios.addListener(initSliderBeneficios);
-
-// initSliderPromos();
-// initSliderBeneficios();
-
+/**QUIZ EFECTO con slide */
    const  swiperQuiz = new Swiper(".swiper-quiz", {
         modules: [Pagination],
         spaceBetween: "92",
@@ -106,9 +75,17 @@ respuestas.forEach(respuesta => {
         // console.log(respuesta.dataset.puntaje);
         quizRespuestas[swiperQuiz.realIndex] = parseInt( respuesta.dataset.puntaje);
         if(swiperQuiz.realIndex == ultimoSlide){
-            console.log('Es el ultimo slide: entonces cargar el loader y luego mostrar resultado');            
-            let suCalifiacion = obtenerCalificacion(quizRespuestas);
-            obtenerPerfil(suCalifiacion);
+            document.getElementById('quiz-entrada').classList.add('d-none');
+            document.getElementById('loader-quiz').classList.remove('d-none');
+            setTimeout(()=>{
+                document.getElementById('loader-quiz').classList.add('d-none');         
+                let suCalifiacion = obtenerCalificacion(quizRespuestas);
+                let miPerfil =obtenerPerfil(suCalifiacion);
+                mostrarResultadosPerfil(miPerfil);
+                // document.getElementById('resultadosQuiz-ahorrador').classList.remove('d-none');  
+            }, 1500)  
+            
+           
         }
         progresoBar.style.width= progresoBase + ((swiperQuiz.realIndex + 1) * progresoBase) + "%";      
         swiperQuiz.slideNext(300, true);
@@ -145,3 +122,58 @@ function obtenerPerfil(calificacion){
    return perfil;
 }
 
+function mostrarResultadosPerfil(perfil){
+  //Ocultar todos los posibles
+document.getElementById('resultadosQuiz-ahorrador').classList.add('d-none');
+document.getElementById('resultadosQuiz-espontaneo').classList.add('d-none');
+document.getElementById('resultadosQuiz-generoso').classList.add('d-none');
+  
+    if(perfil =='espontaneo'){
+        document.getElementById('resultadosQuiz-ahorrador').classList.remove('d-none');
+    }else if(perfil =='ahorrador'){
+        document.getElementById('resultadosQuiz-espontaneo').classList.remove('d-none');
+    }else{
+        document.getElementById('resultadosQuiz-generoso').classList.remove('d-none');
+    }
+
+
+}
+const linksQuizRepetir = document.querySelectorAll('.link-repTest');
+linksQuizRepetir.forEach(linkrepetir =>{
+    linkrepetir.addEventListener('click',(event)=>{ 
+ 
+        regrearQuiz(event.target.dataset.perfil);
+      
+      });
+})
+
+
+function regrearQuiz(perfilActual){
+    document.getElementById('resultadosQuiz-'+perfilActual).classList.add('d-none');
+    swiperQuiz.slideTo(0, 300, true);
+    progresoBar.style.width = progresoBase + '%';
+    document.getElementById('quiz-entrada').classList.remove('d-none');
+}
+
+const facebookLinks = document.querySelectorAll('.contenedor-social-logos .facebook-img')
+facebookLinks.forEach(facelink=>{
+    facelink.addEventListener('click',()=>{
+        console.log(url);
+            window.open("https://www.facebook.com/sharer/sharer.php?u="+url);
+        })
+});
+const linkedinLinks = document.querySelectorAll('.contenedor-social-logos .linkedin-img')
+linkedinLinks.forEach(linkedinlink=>{
+    linkedinlink.addEventListener('click',()=>{
+        console.log(url);
+            window.open("https://www.linkedin.com/shareArticle?mini=true&url="+url);
+        })
+});
+const whatsAppLinks = document.querySelectorAll('.contenedor-social-logos .whatsapp-img')
+whatsAppLinks.forEach(whatsAppLink=>{
+    whatsAppLink.addEventListener('click',()=>{
+        console.log(url);
+            window.open("whatsapp://send?text= Conoce tu perfil de ahorro en: "+url +'index.html#quiz-title');
+        })
+});
+//https://www.linkedin.com/shareArticle?mini=true&url=https%3A//dscreaciones.com/
