@@ -13,7 +13,8 @@ let calificacion=0;
 let quizRespuestas = new Array();
 let url = location.href;
 let swiperBeneficios;
-let titlePage = 'Conoce tu perfil de ahorro';
+let titlePage='Conoce tu perfil de compras';
+let summary='Tu Tarjeta de Crédito te espera, ¡úsala de nuevo!';
 
 const progresoBar = document.querySelector('.progreso .progress-bar');
 const mediaqueryBeneficios = window.matchMedia("(max-width:1279px)");
@@ -46,7 +47,7 @@ mediaqueryBeneficios.addListener(initSliderBeneficios);
 initSliderBeneficios();
 
 /**QUIZ EFECTO con slide */
-   const  swiperQuiz = new Swiper(".swiper-quiz", {
+   const  swiperQuiz = new Swiper(".swiper-quiz-tdc", {
         modules: [Pagination],
         spaceBetween: "92",
         slidesPerGroupSkip:'2',
@@ -59,7 +60,7 @@ initSliderBeneficios();
        
     });
 
-const regresaActions = document.querySelectorAll('.swiper-quiz .pregunta .link-back a');
+const regresaActions = document.querySelectorAll('.swiper-quiz-tdc .pregunta .link-back a');
 regresaActions.forEach( regresa=>{
     regresa.addEventListener('click',()=>{        
        
@@ -71,7 +72,7 @@ regresaActions.forEach( regresa=>{
   
 
 
-const respuestas = document.querySelectorAll('.swiper-quiz .respuestas .respuesta');
+const respuestas = document.querySelectorAll('.swiper-quiz-tdc .respuestas .respuesta');
 respuestas.forEach(respuesta => {
     respuesta.addEventListener('click',()=>{
         // console.log(respuesta.dataset.puntaje);
@@ -114,11 +115,11 @@ function obtenerPerfil(calificacion){
     
    let perfil ='';
     if(calificacion < 5){
-        perfil='ahorrador';
+        perfil='precavido';
     }else if( calificacion >= 5 && calificacion <=9){
-        perfil='espontaneo';
+        perfil='cumplidor';
     }else{
-        perfil='generoso';
+        perfil='aprendiz';
     }
 
    return perfil;
@@ -126,16 +127,16 @@ function obtenerPerfil(calificacion){
 
 function mostrarResultadosPerfil(perfil){
   //Ocultar todos los posibles
-document.getElementById('resultadosQuiz-ahorrador').classList.add('d-none');
-document.getElementById('resultadosQuiz-espontaneo').classList.add('d-none');
-document.getElementById('resultadosQuiz-generoso').classList.add('d-none');
+document.getElementById('resultadosQuiz-precavido').classList.add('d-none');
+document.getElementById('resultadosQuiz-cumplidor').classList.add('d-none');
+document.getElementById('resultadosQuiz-aprendiz').classList.add('d-none');
   
-    if(perfil =='espontaneo'){
-        document.getElementById('resultadosQuiz-ahorrador').classList.remove('d-none');
-    }else if(perfil =='ahorrador'){
-        document.getElementById('resultadosQuiz-espontaneo').classList.remove('d-none');
+    if(perfil =='precavido'){
+        document.getElementById('resultadosQuiz-precavido').classList.remove('d-none');
+    }else if(perfil =='cumplidor'){
+        document.getElementById('resultadosQuiz-cumplidor').classList.remove('d-none');
     }else{
-        document.getElementById('resultadosQuiz-generoso').classList.remove('d-none');
+        document.getElementById('resultadosQuiz-aprendiz').classList.remove('d-none');
     }
 
 
@@ -168,14 +169,14 @@ const linkedinLinks = document.querySelectorAll('.contenedor-social-logos .linke
 linkedinLinks.forEach(linkedinlink=>{
     linkedinlink.addEventListener('click',()=>{
         console.log(url);
-        window.open('https://www.linkedin.com/shareArticle?mini=true&url='+url+'&title='+titlePage);
+            window.open('https://www.linkedin.com/shareArticle?mini=true&url='+url+'&title='+titlePage);
         })
 });
 const whatsAppLinks = document.querySelectorAll('.contenedor-social-logos .whatsapp-img')
 whatsAppLinks.forEach(whatsAppLink=>{
     whatsAppLink.addEventListener('click',()=>{
         console.log(url);
-            window.open("whatsapp://send?text= Conoce tu perfil de ahorro en: "+url +'index.html#quiz-title');
+            window.open("whatsapp://send?text= Conoce tu perfil de compras en: "+url +'quiz-tdc.html#quiz-title');
         })
 });
 const quizLinks = document.querySelectorAll('.contenedor-social-logos .ancla-img')

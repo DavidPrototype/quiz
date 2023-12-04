@@ -101,6 +101,9 @@ export default class Footer extends HTMLElement {
                <a href="https://www.bancoppel.com/modal_bcopp/buro.html" target="_blank">
                    <img src="img/buro.svg" alt="Buro" title="Buro"/>
                </a>
+               <a href="https://www.gob.mx/ipab" target="_blank">
+                   <img src="img/logo-ipab.svg" alt="IPAB" title="IPAB"/>
+               </a>
                <a href="https://www.fintechmexico.org/" target="_blank">
                    <img src="img/fintech.svg" alt="Fintech"  title="FINTECH"/>
                </a>

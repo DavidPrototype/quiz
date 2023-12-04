@@ -9,11 +9,24 @@
      
       
 }
-
+.tooltip-arrow::before{
+    display: none;
+}
 .tooltip-inner{
     // border: 1px solid red;
-    font-family: var(--font-secundaria-regular);
-    text-align: left;
-    color: var(--color-pencil);
-    box-shadow: var(--shadow-flotante);
+    background: #D9D9D9;
+    display: flex;
+    gap: 4px;
+    align-content: center;
+    justify-content: space-between;
+    img{
+        width: auto;
+       
+    }
+    p{
+        font-family: var(--font-secundaria-regular);   
+        font-size: 10px;
+        color: #000;
+    }
+   
 }

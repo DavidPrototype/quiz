@@ -19,6 +19,16 @@
             margin-bottom: var(--spacing03);
             content: "";
         }
+        a{
+            span{
+
+                font-family: var(--font-secundaria-bold);  
+                @include text-sm-14;
+                color:var(--color-azul300);
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
     }
 
     ul {
@@ -53,6 +63,16 @@
     .accordion-item {
         p {
             @include text-sm-16;
+            a{
+                span{
+    
+                    font-family: var(--font-secundaria-bold);  
+                    @include text-sm-16;
+                    color:var(--color-azul300);
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }

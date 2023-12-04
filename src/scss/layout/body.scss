@@ -4,8 +4,10 @@ body {
     @import "_footer";     
     @import "_beneficios"; 
     @import "_conceptos";
-    @import "_preguntas-frecuentes";       
+    @import "_preguntas-frecuentes";
+    @import "_custom-tooltip";          
     @import "../pages/_home";   
+    @import "../pages/_quiztdc";   
     @import "../pages/_error";
 
    

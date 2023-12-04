@@ -27,13 +27,11 @@ export default class ModalSalida extends HTMLElement {
                         ></button>
                         <h1 id="modal-salidaLabel">
                             <strong>
-                                Estás a punto de salir de 
-                                Inversiones BanCoppel</strong
+                            Estás a punto de salir del sitio Tarjeta de Débito BanCoppel</strong
                             >
                         </h1>
                         <p>
-                         Serás redirigido al sitio enlazado. Este sitio es responsable de
-                         su propio contenido y política de privacidad.
+                        Serás redirigido al sitio oficial que seleccionaste, el cual es responsable de su propio contenido y política de privacidad.
                         </p>
                         <a
                             href="${link}"

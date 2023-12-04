@@ -11,9 +11,10 @@ export default {
             input: {
               
                 index: path.resolve(__dirname, "src/index.html"),                
-                error404: path.resolve(__dirname, "src/404.html"), 
-                error500: path.resolve(__dirname, "src/500.html"), 
-                error502: path.resolve(__dirname, "src/502.html"), 
+                quiztdc: path.resolve(__dirname, "src/quiz-tdc.html"),                
+                // error404: path.resolve(__dirname, "src/404.html"), 
+                // error500: path.resolve(__dirname, "src/500.html"), 
+                // error502: path.resolve(__dirname, "src/502.html"), 
             },
             output: {
                 chunkFileNames: "js/[name]-[hash].js",

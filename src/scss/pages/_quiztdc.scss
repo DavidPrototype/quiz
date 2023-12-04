@@ -1,5 +1,5 @@
 
-.main-home {
+.main-tdc {
     
     .quiz{
         padding: 4rem 0;
@@ -23,7 +23,7 @@
         //     border:1px solid blue;
 
         // }
-        .swiper-quiz{
+        .swiper-quiz-tdc{
             overflow: hidden;
 
             .swiper-pagination{
@@ -290,13 +290,13 @@
                    }
                }
             }
-            &.ahorrador{
+            &.precavido{
                 background: var(--state-aprobacion-100);
             }
-            &.espontaneo{
+            &.cumplidor{
                 background: var(--state-info-100);
             }
-            &.generoso{
+            &.aprendiz{
                 background: var(--state-precaucion-100);
             }
         }
@@ -345,7 +345,7 @@
 }
 
 @include media-breakpoint-up(lg) {
-    .main-home {
+    .main-tdc {
         .loader-contenedor{
             .loader{
             
@@ -365,7 +365,7 @@
 
 @include media-breakpoint-up(xl) {
 
-    .main-home{
+    .main-tdc{
         .quiz{
             padding: 6rem 0;
 
