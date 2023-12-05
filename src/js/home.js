@@ -14,6 +14,7 @@ let quizRespuestas = new Array();
 let url = location.href;
 let swiperBeneficios;
 let titlePage = 'Conoce tu perfil de ahorro';
+let tooltipLink;
 
 const progresoBar = document.querySelector('.progreso .progress-bar');
 const mediaqueryBeneficios = window.matchMedia("(max-width:1279px)");
@@ -58,6 +59,12 @@ initSliderBeneficios();
         },
        
     });
+    
+/**
+ * Habilitar Tooltips
+ */
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
 
 const regresaActions = document.querySelectorAll('.swiper-quiz .pregunta .link-back a');
 regresaActions.forEach( regresa=>{
@@ -77,7 +84,8 @@ respuestas.forEach(respuesta => {
         // console.log(respuesta.dataset.puntaje);
         quizRespuestas[swiperQuiz.realIndex] = parseInt( respuesta.dataset.puntaje);
         if(swiperQuiz.realIndex == ultimoSlide){
-            document.getElementById('quiz-entrada').classList.add('d-none');
+            document.getElementById('quiz-entrada').classList.remove('show');
+            document.getElementById('quiz-entrada').classList.add('hide');
             document.getElementById('loader-quiz').classList.remove('d-none');
             setTimeout(()=>{
                 document.getElementById('loader-quiz').classList.add('d-none');         
@@ -126,16 +134,23 @@ function obtenerPerfil(calificacion){
 
 function mostrarResultadosPerfil(perfil){
   //Ocultar todos los posibles
-document.getElementById('resultadosQuiz-ahorrador').classList.add('d-none');
-document.getElementById('resultadosQuiz-espontaneo').classList.add('d-none');
-document.getElementById('resultadosQuiz-generoso').classList.add('d-none');
+document.getElementById('resultadosQuiz-ahorrador').classList.remove('show');
+document.getElementById('resultadosQuiz-espontaneo').classList.remove('show');
+document.getElementById('resultadosQuiz-generoso').classList.remove('show');
+
+document.getElementById('resultadosQuiz-ahorrador').classList.add('hide');
+document.getElementById('resultadosQuiz-espontaneo').classList.add('hide');
+document.getElementById('resultadosQuiz-generoso').classList.add('hide');
   
     if(perfil =='espontaneo'){
-        document.getElementById('resultadosQuiz-ahorrador').classList.remove('d-none');
+        document.getElementById('resultadosQuiz-ahorrador').classList.remove('hide');
+        document.getElementById('resultadosQuiz-ahorrador').classList.add('show');
     }else if(perfil =='ahorrador'){
-        document.getElementById('resultadosQuiz-espontaneo').classList.remove('d-none');
+        document.getElementById('resultadosQuiz-espontaneo').classList.remove('hide');
+        document.getElementById('resultadosQuiz-espontaneo').classList.remove('show');
     }else{
-        document.getElementById('resultadosQuiz-generoso').classList.remove('d-none');
+        document.getElementById('resultadosQuiz-generoso').classList.remove('hide');
+        document.getElementById('resultadosQuiz-generoso').classList.add('show');
     }
 
 
@@ -151,10 +166,12 @@ linksQuizRepetir.forEach(linkrepetir =>{
 
 
 function regrearQuiz(perfilActual){
-    document.getElementById('resultadosQuiz-'+perfilActual).classList.add('d-none');
+    document.getElementById('resultadosQuiz-'+perfilActual).classList.remove('show');
+    document.getElementById('resultadosQuiz-'+perfilActual).classList.add('hide');
     swiperQuiz.slideTo(0, 300, true);
     progresoBar.style.width = progresoBase + '%';
-    document.getElementById('quiz-entrada').classList.remove('d-none');
+    document.getElementById('quiz-entrada').classList.remove('hide');
+    document.getElementById('quiz-entrada').classList.add('show');
 }
 
 const facebookLinks = document.querySelectorAll('.contenedor-social-logos .facebook-img')
@@ -181,26 +198,55 @@ whatsAppLinks.forEach(whatsAppLink=>{
 const quizLinks = document.querySelectorAll('.contenedor-social-logos .ancla-img')
 quizLinks.forEach(quizLink=>{
     quizLink.addEventListener('click',(event)=>{ 
-        
+     
   navigator.clipboard.writeText(url).then(function() {
            
-            const tooltip = new Tooltip(event.target);
+            let tooltip = new Tooltip(event.target);
             // setContent example
             tooltip.setContent({ 
                 '.tooltip-inner': `                   
                 <img src="icons/check-icon.svg"/>
                 <p>Link copiado</p> 
                ` 
+               
             })
+        //    deshabilitarTooltips();
+           tooltipLink.disable();
+           tooltipLink.hide();
+
             tooltip.show();
             setTimeout(()=>{
                 tooltip.disable();
                 tooltip.hide();
+               
             },1000)
-
+         
         }, function() {
             console.log('Copy error')
         });
+    })
+    // habilitarTooltips();
+});
+
+function deshabilitarTooltips(){
+    tooltipList.forEach((tip)=>{
+      
+        tip.hide();
+    });
+}
+function habilitarTooltips(){
+    tooltipList.forEach((tip)=>{
+      
+        tip.show();
+    });
+}
+
+quizLinks.forEach(quizLink=>{
+    quizLink.addEventListener('mouseover',(event)=>{ 
+        
+        tooltipLink = new Tooltip(event.target);
+        // tooltipLink.setContent({ '.tooltip-inner': '<p>Link</p>' })
+        tooltipLink.show();
     })
 });
 

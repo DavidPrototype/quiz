@@ -39,12 +39,12 @@
                   Conoce tu perfil de ahorro
                 </h2>
                 <p class="headline--subtitle">
-                  Vuelve a usar tu Tarjeta de Débito BanCoppel <sup>1</sup>
+                  Vuelve a usar tu Tarjeta de Débito BanCoppel <a href="#seccion-legal" class="link-nodecoration"><sup>1</sup></a>
                 </p>
             </div>
           </div>
 
-          <div class="row justify-content-xl-center" id="quiz-entrada">
+          <div class="row justify-content-center" id="quiz-entrada">
             <div class="col-12 col-xl-10  quiz-contenedor">
               <div class="quiz-card swiper-quiz">
                 <div class="instrucciones">
@@ -564,7 +564,7 @@
               <div class="col-12">
                 <div class="loader-contenedor">
                   <dotlottie-player
-                              src="../img/Loading.json"
+                              src="img/Loading.json"
                               background="transparent"
                               speed="1"
                               direction="1"
@@ -581,7 +581,7 @@
                 </div>
               </div>
             </div>
-          <div class="row  d-none" id="resultadosQuiz-ahorrador">
+          <div class="row  hide resultados" id="resultadosQuiz-ahorrador">
             <div class="col-12 quiz--resultados">
               <div class="resultado-contenedor ahorrador">
                   <div class="contenedor-detalles">
@@ -643,21 +643,42 @@
                         </li>
                       </ul>
                       <div class="quiz-acciones">
-                          <div class="compartir-sociales">
+                          <div class="compartir-sociales d-none">
                             <p>Compartir</p>
                             <div class="contenedor-social-logos">                          
-                              <img src="icons/facebook_blanco.svg" alt="FaceBook Icon" class="facebook-img">
-                            <img src="icons/linkedin_blanco.svg" alt="LinkedIn Icon" class="linkedin-img">
-                            <img src="icons/whatapp_blanco.svg" alt="Share Icon" class="whatsapp-img">
-                            <img src="icons/ancla_blanco.svg" 
-                                  alt="Share Icon" 
-                                  class="ancla-img" 
-                                  id="linkshare-tooltip"
+                              <img src="icons/facebook_blanco.svg" 
+                                  alt="FaceBook Icon" 
+                                  class="facebook-img"
                                   data-bs-toggle="tooltip" 
-                                  data-bs-placement="top"
+                                  data-bs-placement="bottom"
                                   data-bs-html="true"
-                                  data-bs-title="Link copiado"
+                                  data-bs-title="<p>Facebook</p>"
                                   >
+                              <img src="icons/linkedin_blanco.svg" 
+                                    alt="LinkedIn Icon" 
+                                    class="linkedin-img"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"
+                                    data-bs-title="<p>LinkedIn</p>"
+                                    >
+                              <img src="icons/whatapp_blanco.svg" 
+                                    alt="Share Icon" 
+                                    class="whatsapp-img"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"
+                                    data-bs-title="<p>WhatsApp</p>"
+                                    >
+                              <img src="icons/ancla_blanco.svg" 
+                                    alt="Share Icon" 
+                                    class="ancla-img" 
+                                    id="linkshare-tooltip"                                    
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"  
+                                    data-bs-title="<p>Link</p>"                                
+                                  
+                                    >
                             </div>
                           </div>
                           <div class="accion-repetir">
@@ -668,7 +689,7 @@
               </div>
             </div>
           </div>
-          <div class="row d-none" id="resultadosQuiz-espontaneo">
+          <div class="row hide resultados" id="resultadosQuiz-espontaneo">
             <div class="col-12 quiz--resultados">
               <div class="resultado-contenedor espontaneo">
                   <div class="contenedor-detalles">
@@ -729,21 +750,42 @@
                         </li>
                       </ul>
                       <div class="quiz-acciones">
-                        <div class="compartir-sociales">
+                        <div class="compartir-sociales d-none">
                           <p>Compartir</p>
                           <div class="contenedor-social-logos">                          
-                            <img src="icons/facebook_blanco.svg" alt="FaceBook Icon" class="facebook-img">
-                            <img src="icons/linkedin_blanco.svg" alt="LinkedIn Icon" class="linkedin-img">
-                            <img src="icons/whatapp_blanco.svg" alt="Share Icon" class="whatsapp-img">
-                            <img src="icons/ancla_blanco.svg" 
-                                  alt="Share Icon" 
-                                  class="ancla-img" 
-                                  id="linkshare-tooltip"
+                            <img src="icons/facebook_blanco.svg" 
+                                  alt="FaceBook Icon" 
+                                  class="facebook-img"
                                   data-bs-toggle="tooltip" 
-                                  data-bs-placement="top"
+                                  data-bs-placement="bottom"
                                   data-bs-html="true"
-                                  data-bs-title="Link copiado"
+                                  data-bs-title="<p>Facebook</p>"
                                   >
+                              <img src="icons/linkedin_blanco.svg" 
+                                    alt="LinkedIn Icon" 
+                                    class="linkedin-img"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"
+                                    data-bs-title="<p>LinkedIn</p>"
+                                    >
+                              <img src="icons/whatapp_blanco.svg" 
+                                    alt="Share Icon" 
+                                    class="whatsapp-img"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"
+                                    data-bs-title="<p>WhatsApp</p>"
+                                    >
+                              <img src="icons/ancla_blanco.svg" 
+                                    alt="Share Icon" 
+                                    class="ancla-img" 
+                                    id="linkshare-tooltip"                                    
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"  
+                                    data-bs-title="<p>Link</p>"                                
+                                  
+                                    >
                           </div>
                         </div>
                         <div class="accion-repetir">
@@ -754,7 +796,7 @@
               </div>
             </div>
           </div>
-          <div class="row d-none" id="resultadosQuiz-generoso">
+          <div class="row hide resultados" id="resultadosQuiz-generoso">
             <div class="col-12 quiz--resultados">
               <div class="resultado-contenedor generoso">
                   <div class="contenedor-detalles">
@@ -817,21 +859,42 @@
                         </li>
                       </ul>
                       <div class="quiz-acciones">
-                        <div class="compartir-sociales">
+                        <div class="compartir-sociales d-none">
                           <p>Compartir</p>
                           <div class="contenedor-social-logos">                          
-                            <img src="icons/facebook_blanco.svg" alt="FaceBook Icon" class="facebook-img">
-                            <img src="icons/linkedin_blanco.svg" alt="LinkedIn Icon" class="linkedin-img">
-                            <img src="icons/whatapp_blanco.svg" alt="Share Icon" class="whatsapp-img">
-                            <img src="icons/ancla_blanco.svg" 
-                                  alt="Share Icon" 
-                                  class="ancla-img" 
-                                  id="linkshare-tooltip"
+                            <img src="icons/facebook_blanco.svg" 
+                                  alt="FaceBook Icon" 
+                                  class="facebook-img"
                                   data-bs-toggle="tooltip" 
-                                  data-bs-placement="top"
+                                  data-bs-placement="bottom"
                                   data-bs-html="true"
-                                  data-bs-title="Link copiado"
+                                  data-bs-title="<p>Facebook</p>"
                                   >
+                              <img src="icons/linkedin_blanco.svg" 
+                                    alt="LinkedIn Icon" 
+                                    class="linkedin-img"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"
+                                    data-bs-title="<p>LinkedIn</p>"
+                                    >
+                              <img src="icons/whatapp_blanco.svg" 
+                                    alt="Share Icon" 
+                                    class="whatsapp-img"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"
+                                    data-bs-title="<p>WhatsApp</p>"
+                                    >
+                              <img src="icons/ancla_blanco.svg" 
+                                    alt="Share Icon" 
+                                    class="ancla-img" 
+                                    id="linkshare-tooltip"                                    
+                                    data-bs-placement="bottom"
+                                    data-bs-html="true"  
+                                    data-bs-title="<p>Link</p>"                                
+                                  
+                                    >
                           </div>
                         </div>
                         <div class="accion-repetir">
@@ -953,7 +1016,7 @@
           </div>
       </div>
   </section>
-  <section class="legales-section">
+  <section class="legales-section" id="seccion-legal">
     <div class="custom-container">
         <div class="row">
           <div class="col-12 legales-section--info">

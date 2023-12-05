@@ -4,6 +4,9 @@
     .quiz{
         padding: 4rem 0;
         background: var(--color-blanco);
+       #quiz-entrada{
+        transition: all 0.4s ease-in-out;
+       }
 
         .headline{
             margin-bottom: 2.5rem;
@@ -32,6 +35,36 @@
             .swiper-pagination-fraction{
                 bottom: 0;
             }
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                // height: auto;
+             
+            } 
+            100% {
+                opacity: 1;
+                /*  position: relative; */
+                display: block;
+                // left: 0;
+            }
+        }
+        @keyframes fade-out {
+             0% {
+                opacity: 1;
+            } 
+            100% {              
+                opacity: 0;
+                display: none;                 
+            }
+        }
+    
+        .hide {
+            display: none; 
+            animation: fade-out 0.5s none ;
+        }
+        .show {
+            animation: fade-in 0.5s none ;
         }
         &-card{
             // border: 1px solid red;
@@ -137,7 +170,9 @@
             }
         }
     }
-
+    .resultados{
+        transition: all .8s ease-in-out;
+    }
     .quiz--resultados{
         // border: 1px solid blue;
       

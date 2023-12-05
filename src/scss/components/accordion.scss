@@ -29,6 +29,11 @@
                 cursor: pointer;
             }
         }
+        span{
+
+            font-family: var(--font-secundaria-bold);  
+            @include text-sm-14;            
+        }
     }
 
     ul {

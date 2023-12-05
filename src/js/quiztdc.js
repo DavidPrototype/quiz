@@ -15,6 +15,7 @@ let url = location.href;
 let swiperBeneficios;
 let titlePage='Conoce tu perfil de compras';
 let summary='Tu Tarjeta de Crédito te espera, ¡úsala de nuevo!';
+let tooltipLink;
 
 const progresoBar = document.querySelector('.progreso .progress-bar');
 const mediaqueryBeneficios = window.matchMedia("(max-width:1279px)");
@@ -59,7 +60,11 @@ initSliderBeneficios();
         },
        
     });
-
+/**
+ * Habilitar Tooltips
+ */
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new Tooltip(tooltipTriggerEl))
 const regresaActions = document.querySelectorAll('.swiper-quiz-tdc .pregunta .link-back a');
 regresaActions.forEach( regresa=>{
     regresa.addEventListener('click',()=>{        
@@ -78,7 +83,8 @@ respuestas.forEach(respuesta => {
         // console.log(respuesta.dataset.puntaje);
         quizRespuestas[swiperQuiz.realIndex] = parseInt( respuesta.dataset.puntaje);
         if(swiperQuiz.realIndex == ultimoSlide){
-            document.getElementById('quiz-entrada').classList.add('d-none');
+            document.getElementById('quiz-entrada').classList.remove('show');
+            document.getElementById('quiz-entrada').classList.add('hide');
             document.getElementById('loader-quiz').classList.remove('d-none');
             setTimeout(()=>{
                 document.getElementById('loader-quiz').classList.add('d-none');         
@@ -127,16 +133,23 @@ function obtenerPerfil(calificacion){
 
 function mostrarResultadosPerfil(perfil){
   //Ocultar todos los posibles
-document.getElementById('resultadosQuiz-precavido').classList.add('d-none');
-document.getElementById('resultadosQuiz-cumplidor').classList.add('d-none');
-document.getElementById('resultadosQuiz-aprendiz').classList.add('d-none');
+document.getElementById('resultadosQuiz-precavido').classList.remove('show');
+document.getElementById('resultadosQuiz-cumplidor').classList.remove('show');
+document.getElementById('resultadosQuiz-aprendiz').classList.remove('show');
+
+document.getElementById('resultadosQuiz-precavido').classList.add('hide');
+document.getElementById('resultadosQuiz-cumplidor').classList.add('hide');
+document.getElementById('resultadosQuiz-aprendiz').classList.add('hide');
   
     if(perfil =='precavido'){
-        document.getElementById('resultadosQuiz-precavido').classList.remove('d-none');
+        document.getElementById('resultadosQuiz-precavido').classList.remove('hide');
+        document.getElementById('resultadosQuiz-precavido').classList.add('show');
     }else if(perfil =='cumplidor'){
-        document.getElementById('resultadosQuiz-cumplidor').classList.remove('d-none');
+        document.getElementById('resultadosQuiz-cumplidor').classList.remove('hide');
+        document.getElementById('resultadosQuiz-cumplidor').classList.add('show');
     }else{
-        document.getElementById('resultadosQuiz-aprendiz').classList.remove('d-none');
+        document.getElementById('resultadosQuiz-aprendiz').classList.remove('hide');
+        document.getElementById('resultadosQuiz-aprendiz').classList.add('show');
     }
 
 
@@ -152,10 +165,12 @@ linksQuizRepetir.forEach(linkrepetir =>{
 
 
 function regrearQuiz(perfilActual){
-    document.getElementById('resultadosQuiz-'+perfilActual).classList.add('d-none');
+    document.getElementById('resultadosQuiz-'+perfilActual).classList.remove('show');
+    document.getElementById('resultadosQuiz-'+perfilActual).classList.add('hide');
     swiperQuiz.slideTo(0, 300, true);
     progresoBar.style.width = progresoBase + '%';
-    document.getElementById('quiz-entrada').classList.remove('d-none');
+    document.getElementById('quiz-entrada').classList.remove('hide');
+    document.getElementById('quiz-entrada').classList.add('show');
 }
 
 const facebookLinks = document.querySelectorAll('.contenedor-social-logos .facebook-img')
@@ -193,6 +208,10 @@ quizLinks.forEach(quizLink=>{
                 <p>Link copiado</p> 
                ` 
             })
+            //Oculta tooltip anterior
+            tooltipLink.disable();
+            tooltipLink.hide();
+            //Muestra nuevo tootlip con alert
             tooltip.show();
             setTimeout(()=>{
                 tooltip.disable();
@@ -205,3 +224,11 @@ quizLinks.forEach(quizLink=>{
     })
 });
 
+quizLinks.forEach(quizLink=>{
+    quizLink.addEventListener('mouseover',(event)=>{ 
+        
+        tooltipLink = new Tooltip(event.target);
+        // tooltipLink.setContent({ '.tooltip-inner': '<p>Link</p>' })
+        tooltipLink.show();
+    })
+});
