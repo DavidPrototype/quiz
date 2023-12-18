@@ -83,8 +83,8 @@ respuestas.forEach(respuesta => {
         // console.log(respuesta.dataset.puntaje);
         quizRespuestas[swiperQuiz.realIndex] = parseInt( respuesta.dataset.puntaje);
         if(swiperQuiz.realIndex == ultimoSlide){
-            document.getElementById('quiz-entrada').classList.remove('show');
-            document.getElementById('quiz-entrada').classList.add('hide');
+            // document.getElementById('quiz-entrada').classList.remove('show');
+            document.getElementById('quiz-entrada').classList.add('d-none');
             document.getElementById('loader-quiz').classList.remove('d-none');
             setTimeout(()=>{
                 document.getElementById('loader-quiz').classList.add('d-none');         
@@ -169,8 +169,8 @@ function regrearQuiz(perfilActual){
     document.getElementById('resultadosQuiz-'+perfilActual).classList.add('hide');
     swiperQuiz.slideTo(0, 300, true);
     progresoBar.style.width = progresoBase + '%';
-    document.getElementById('quiz-entrada').classList.remove('hide');
-    document.getElementById('quiz-entrada').classList.add('show');
+    document.getElementById('quiz-entrada').classList.remove('d-none');
+    // document.getElementById('quiz-entrada').classList.add('show');
 }
 
 const facebookLinks = document.querySelectorAll('.contenedor-social-logos .facebook-img')
@@ -191,7 +191,7 @@ const whatsAppLinks = document.querySelectorAll('.contenedor-social-logos .whats
 whatsAppLinks.forEach(whatsAppLink=>{
     whatsAppLink.addEventListener('click',()=>{
         console.log(url);
-            window.open("whatsapp://send?text= Conoce tu perfil de compras en: "+url +'quiz-tdc.html#quiz-title');
+            window.open("whatsapp://send?text= Conoce tu perfil de compras en: "+url );
         })
 });
 const quizLinks = document.querySelectorAll('.contenedor-social-logos .ancla-img')

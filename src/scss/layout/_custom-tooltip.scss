@@ -9,12 +9,13 @@
      
       
 }
-.tooltip-arrow::before{
-    display: none;
-}
+// .tooltip-arrow::before{
+//     display: none;
+// }
 .tooltip-inner{
-    // border: 1px solid red;
-    background: #D9D9D9;
+    border-radius: 8px;
+    padding: 10px;
+    background: var(--neutral-gris-600);
     display: flex;
     gap: 4px;
     align-content: center;
@@ -25,8 +26,9 @@
     }
     p{
         font-family: var(--font-secundaria-regular);   
-        font-size: 10px;
-        color: #000;
+        font-size: 14px;
+        line-height: 22px;
+        color: #fff;
     }
    
 }
