@@ -24,6 +24,9 @@ export default {
                     if (/\.(gif|jpe?g|png|svg)$/.test(name ?? "")) {
                         return "img/[name]-[hash][extname]";
                     }
+                    if (/\.(json)$/.test(name ?? "")) {
+                        return "img/[name][extname]";
+                    }
 
                     if (/\.css$/.test(name ?? "")) {
                         return "css/[name]-[hash][extname]";
