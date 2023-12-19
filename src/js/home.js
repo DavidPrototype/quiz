@@ -12,12 +12,18 @@ let ultimoSlide = 5;
 let calificacion=0;
 let quizRespuestas = new Array();
 let url = location.href;
+let shareimg='';
 let swiperBeneficios;
 let titlePage = 'Conoce tu perfil de ahorro';
 let tooltipLink;
 
+//Referencias html
+const metaImage = document.querySelector('#meta-image');
+const metaUrl = document.querySelector('#meta-url');
 const progresoBar = document.querySelector('.progreso .progress-bar');
 const mediaqueryBeneficios = window.matchMedia("(max-width:1279px)");
+
+metaUrl.setAttribute('content',url);
 
 const initSliderBeneficios = () => {
     if (mediaqueryBeneficios.matches === true) {
@@ -150,12 +156,15 @@ document.getElementById('resultadosQuiz-generoso').classList.add('hide');
     if(perfil =='espontaneo'){
         document.getElementById('resultadosQuiz-ahorrador').classList.remove('hide');
         document.getElementById('resultadosQuiz-ahorrador').classList.add('show');
+        metaImage.setAttribute('content','img/share-espontaneo.jpg');
     }else if(perfil =='ahorrador'){
         document.getElementById('resultadosQuiz-espontaneo').classList.remove('hide');
         document.getElementById('resultadosQuiz-espontaneo').classList.remove('show');
+        metaImage.setAttribute('content','img/share-ahorrador.jpg');
     }else{
         document.getElementById('resultadosQuiz-generoso').classList.remove('hide');
         document.getElementById('resultadosQuiz-generoso').classList.add('show');
+        metaImage.setAttribute('content','img/share-generoso.jpg');
     }
 
 
